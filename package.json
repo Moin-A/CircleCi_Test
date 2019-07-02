@@ -1,0 +1,25 @@
+{
+  "name": "project_visual_regression",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --browser chrome --spec 'cypress/integration/visual_tests/**/*'",
+    "beta": "cypress run --browser chrome --spec 'cypress/integration/e2e_test/beta/**/*'",
+    "staging": "cypress run --spec 'cypress/integration/e2e_test/staging/staging.spec.js'",
+    "prod": "cypress run --browser chrome --spec 'cypress/integration/e2e_test/prod/prod.spec.js'",
+    "vtest": "cypress run --browser chrome --spec 'cypress/integration/visual_tests/**/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^3.3.2",
+    "cypress-image-snapshot": "^2.3.5",
+    "cypress-plugin-retries": "^1.2.2",
+    "jquery": "^3.3.1"
+  },
+  "dependencies": {
+    "cypress-visual-regression": "^1.0.0"
+  },
+  "description": "Hi All"
+}

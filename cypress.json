@@ -1,0 +1,30 @@
+{
+"baseUrl" :"https://hindi.thequint.com",
+"chromeWebSecurity": false,
+"updateSnapshot": true,
+"videoCompression": 20,
+"trashAssetsBeforeRuns": true,
+"blacklistHosts": ["cdn.moengage.com","tpc.googlesyndication.com","pagead2.googlesyndication.com","securepubads.g.doubleclick.net","fea.assettype.com/thequint/assets/fonts/fontawesome-webfont-af7ae505a9.woff2?v=4.7.0","www.metype.com","players.brightcove.net"],
+"video": true,
+"screenshots": false,
+
+"env": {
+  "thequintbeta": "https://thequint-beta.quintype.io",
+  "thequint-beta": "https://thequint-beta.quintype.io/",
+  "thequint-beta-hindi": "https://thequint-beta-hindi.quintype.io/",
+  "thequint-web": "https://thequint-web.qtstage.io/",
+  "thequint-hindi-web" : "https://thequint-hindi-web.qtstage.io/",
+  "hindi.thequint":"https://hindi.thequint.com/",
+  "FunctionalTest2":"https://github.com/Moin-A/NewFunctionalTest",
+  "FunctionalTest":"https://github.com/Moin-A/FunctionalTest",
+  "www.thequint": "https://www.thequint.com/",
+  "thequint-hotnews": "https://www.thequint.com/hot-news",
+  "thequint-liveblog": "https://www.thequint.com/topic/live-blog",
+  "thequint-bigstory": "https://www.thequint.com/big-story"
+
+
+
+}
+}
+  
+  
