@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  prepare:
+  build:
     docker:
     - image: cypress/browsers:node10.2.1-chrome74
     steps:
@@ -47,6 +47,6 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - Prepare
+      - build
           requires:
             - e2e_test
