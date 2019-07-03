@@ -41,6 +41,6 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-    - visual_test
-        requires:
-           - e2e_test
+      - visual_test
+          requires:
+            - e2e_test
