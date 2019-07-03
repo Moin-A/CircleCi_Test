@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  Visual_test:
     docker:
     - image: cypress/browsers:node10.2.1-chrome74
     steps:
@@ -20,7 +20,7 @@ jobs:
     - store_artifacts:
         path: /root/project/cypress/videos/Visual-test3
         destination: visual-regression
-  test:
+  e2e_test:
     docker:
     - image: cypress/browsers:node10.2.1-chrome74
     steps:
@@ -41,7 +41,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-      - test:
+      - Visual_test
+      - e2e_test:
         requires:
-          - build    
+          - Visual_test    
