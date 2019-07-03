@@ -49,4 +49,4 @@ workflows:
     jobs:
       - Prepare
           requires:
-           - e2e_test
+            - e2e_test
