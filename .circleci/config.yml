@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  visual_test:
+  prepare:
     docker:
     - image: cypress/browsers:node10.2.1-chrome74
     steps:
@@ -9,6 +9,7 @@ jobs:
         keys:
         - myapps-{{ .Branch }}-{{ checksum "package.json" }}
     - run: npm install --save-dev && npm test
+    - run: npm run start
     - save_cache:
         key: myapp-{{ .Branch }}-{{ checksum "package.json" }}
         paths:
@@ -17,14 +18,18 @@ jobs:
     - store_artifacts:
         path: /root/project/cypress/snapshots
         destination: visual-regression
-    - store_artifacts:
-        path: /root/project/cypress/videos/Visual-test3
-        destination: visual-regression
+    
+    - - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules    
   e2e_test:
     docker:
     - image: cypress/browsers:node10.2.1-chrome74
     steps:
     - checkout: {}
+    - attach_workspace:
+          at: .    
     - restore_cache:
         keys:
         - myapps2-{{ .Branch }}-{{ checksum "package.json" }}
@@ -37,9 +42,11 @@ jobs:
     - store_artifacts:
         path: /root/project/cypress/snapshots
         destination: visual-regression
+    
 workflows:
   version: 2
   build_and_test:
     jobs:
-    - visual_test
-    - e2e_test
+    - Prepare
+         requires:
+           - e2e_test
