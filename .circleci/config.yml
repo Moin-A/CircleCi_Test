@@ -48,5 +48,5 @@ workflows:
   build_and_test:
     jobs:
     - Prepare
-         requires:
+        requires:
            - e2e_test
