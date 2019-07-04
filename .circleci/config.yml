@@ -43,5 +43,5 @@ workflows:
     jobs:
       - Visual_test
       - e2e_test:
-        requires:
+          requires:
           - Visual_test    
